@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://c0vj7eblfohgn"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_1pwfo"]
+[ext_resource type="Texture2D" uid="uid://ntv7jhaablbw" path="res://sprites/Character_animation/priests_idle/priest1/v1/priest1_v1_1.png" id="2_8xwjw"]
+[ext_resource type="Texture2D" uid="uid://dn0m1ytq6rixw" path="res://sprites/Character_animation/priests_idle/priest1/v1/priest1_v1_2.png" id="3_o36hl"]
+[ext_resource type="Texture2D" uid="uid://d0r5h3svigjsg" path="res://sprites/Character_animation/priests_idle/priest1/v1/priest1_v1_3.png" id="4_hwa05"]
+[ext_resource type="Texture2D" uid="uid://bp1ib56vvq8u2" path="res://sprites/Character_animation/priests_idle/priest1/v1/priest1_v1_4.png" id="5_dybvy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hp3e3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8xwjw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_o36hl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hwa05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dybvy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ss504"]
+size = Vector2(15, 6)
+
+[node name="player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_1pwfo")
+
+[node name="animation" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2.38419e-07, 2.38419e-07)
+scale = Vector2(1.04469, 1.14625)
+sprite_frames = SubResource("SpriteFrames_hp3e3")
+frame_progress = 0.976942
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 6)
+shape = SubResource("RectangleShape2D_ss504")

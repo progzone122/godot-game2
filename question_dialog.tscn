@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbnw5gvnq7q2j"]
+
+[ext_resource type="Script" path="res://scripts/question_dialog.gd" id="1_30jtl"]
+
+[sub_resource type="SystemFont" id="SystemFont_kkypf"]
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_cbdxq"]
+line_spacing = 6.215
+font = SubResource("SystemFont_kkypf")
+font_size = 11
+
+[node name="question_dialog" type="Node2D"]
+script = ExtResource("1_30jtl")
+
+[node name="question" type="Label" parent="."]
+visible = false
+offset_right = 418.0
+offset_bottom = 42.0
+scale = Vector2(1.01345, 0.994043)
+label_settings = SubResource("LabelSettings_cbdxq")
+autowrap_mode = 2
+
+[node name="button1" type="Button" parent="."]
+visible = false
+offset_left = 1.0
+offset_top = 40.0
+offset_right = 126.0
+offset_bottom = 71.0
+text = "ДА"
+
+[node name="button2" type="Button" parent="."]
+visible = false
+offset_left = 1.0
+offset_top = 75.0
+offset_right = 126.0
+offset_bottom = 106.0
+text = "Ні"
+
+[connection signal="pressed" from="button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="button2" to="." method="_on_button_2_pressed"]
