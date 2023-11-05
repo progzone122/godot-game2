@@ -1,14 +1,16 @@
 extends Node2D
 
 @onready var coin_elem = $CanvasLayer/HBoxContainer/coin_label
-var coin := 0;
 
 func addCoin(count):
-	coin += count
+	Global.coins += count
 func removeCoin(count):
-	coin -= count
+	Global.coins -= count
 
-	
+
+# Если игрок коснулся объекта game_over
+func _on_game_over_body_entered(body):
+	get_tree().change_scene_to_file("res://game_over.tscn")
+
 func _process(delta):
-	coin_elem.text = str(coin) # Обновление кол-во монет
-
+	coin_elem.text = str(Global.coins) # Обновление кол-во монет

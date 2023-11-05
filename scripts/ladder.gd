@@ -34,8 +34,8 @@ func _on_body_entered(body):
 			player.position.x = ladder3.position.x - 20
 			player.position.y = ladder3.position.y
 		3:
-			player.position.x = ladder2.position.x - 40
-			player.position.y = ladder2.position.y	
+			player.position.x = ladder2.position.x
+			player.position.y = ladder2.position.y + 40	
 		# ladder4 / ladder5
 		4:
 			player.position.x = ladder5.position.x
