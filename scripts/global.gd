@@ -96,8 +96,8 @@ extends Node
 	{
 		"question": "Bluetooth поддерживается на многих типах устройств?",
 		"answers": {
-			"Да": false,
-			"Нет": true,
+			"Да": true,
+			"Нет": false,
 		}
 	},	
 	{
