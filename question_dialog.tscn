@@ -6,36 +6,62 @@
 subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_cbdxq"]
-line_spacing = 6.215
+line_spacing = 5.055
 font = SubResource("SystemFont_kkypf")
-font_size = 11
+font_size = 22
 
 [node name="question_dialog" type="Node2D"]
 script = ExtResource("1_30jtl")
+metadata/_edit_horizontal_guides_ = []
 
-[node name="question" type="Label" parent="."]
-visible = false
-offset_right = 418.0
-offset_bottom = 42.0
-scale = Vector2(1.01345, 0.994043)
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2006.5
+offset_top = -135.0
+offset_right = 2006.5
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.997767, 1.0033)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(1500, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="question" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "ывфывфывфывфывфывфыфывфывфывфывфывфывфы"
 label_settings = SubResource("LabelSettings_cbdxq")
-autowrap_mode = 2
+horizontal_alignment = 1
+uppercase = true
 
-[node name="button1" type="Button" parent="."]
-visible = false
-offset_left = 1.0
-offset_top = 40.0
-offset_right = 126.0
-offset_bottom = 71.0
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="button1" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
 text = "ДА"
 
-[node name="button2" type="Button" parent="."]
-visible = false
-offset_left = 1.0
-offset_top = 75.0
-offset_right = 126.0
-offset_bottom = 106.0
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="button2" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
 text = "Ні"
 
-[connection signal="pressed" from="button1" to="." method="_on_button_1_pressed"]
-[connection signal="pressed" from="button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer2/button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer3/button2" to="." method="_on_button_2_pressed"]

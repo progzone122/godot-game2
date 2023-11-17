@@ -1,6 +1,7 @@
 extends Node
 
 @onready var coins := 0
+@onready var hp := 3
 @onready var questions := [
 	{
 		"question": "Максимальная скорость передачи данных WiFi6?",
