@@ -1,18 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbnw5gvnq7q2j"]
+[gd_scene load_steps=4 format=3 uid="uid://cvit4b7muormt"]
 
-[ext_resource type="Script" path="res://scripts/question_dialog.gd" id="1_30jtl"]
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_ont64"]
 
-[sub_resource type="SystemFont" id="SystemFont_6aono"]
+[sub_resource type="SystemFont" id="SystemFont_kkypf"]
 subpixel_positioning = 0
 
-[sub_resource type="LabelSettings" id="LabelSettings_cbdxq"]
+[sub_resource type="LabelSettings" id="LabelSettings_p2oqd"]
 line_spacing = 5.055
-font = SubResource("SystemFont_6aono")
-font_size = 22
+font = SubResource("SystemFont_kkypf")
+font_size = 33
 
-[node name="question_dialog" type="Node2D"]
-script = ExtResource("1_30jtl")
-metadata/_edit_horizontal_guides_ = []
+[node name="menu" type="Node2D"]
+script = ExtResource("1_ont64")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -39,10 +38,9 @@ size_flags_vertical = 4
 alignment = 1
 
 [node name="question" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
-visible = false
 layout_mode = 2
-text = "ывфывфывфывфывфывфыфывфывфывфывфывфывфы"
-label_settings = SubResource("LabelSettings_cbdxq")
+text = "Начать игру?"
+label_settings = SubResource("LabelSettings_p2oqd")
 horizontal_alignment = 1
 uppercase = true
 
@@ -51,20 +49,14 @@ layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="button1" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
-visible = false
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
 text = "ДА"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="button2" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer3"]
-visible = false
+[node name="button2" type="Button" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
-text = "Ні"
+text = "НЕТ"
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer2/button1" to="." method="_on_button_1_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer3/button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer2/button2" to="." method="_on_button_2_pressed"]
